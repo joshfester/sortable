@@ -113,6 +113,9 @@ document.addEventListener('click', function (e) {
 
         // And finally insert the end result
         table.replaceChild(clone_tbody, org_tbody)
+        
+        const updateEvent = new Event('sortable-updated');
+        table.dispatchEvent(updateEvent);
       }
     } catch (error) {
       // console.log(error)
